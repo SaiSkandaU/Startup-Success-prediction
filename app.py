@@ -1,6 +1,3 @@
-%pip install pandas
-%pip install numpy
-%pip install scikit-learn
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -14,9 +11,9 @@ warnings.filterwarnings('ignore')
 def load_assets():
     """Loads the trained ML model and preprocessor pipeline."""
     try:
-        with open('preprocessor.pkl', 'rb') as file:
+        with open('./Models/preprocessor.pkl', 'rb') as file:
             preprocessor = pickle.load(file)
-        with open('best_rf_model.pkl', 'rb') as file:
+        with open('./Models/best_rf_model.pkl', 'rb') as file:
             model = pickle.load(file)
         return preprocessor, model
     except FileNotFoundError:
